@@ -18,7 +18,7 @@ on:
     branches: [main]
 
 jobs:
-  main:
+  markdownlint:
     if: contains(github.repositoryUrl, 'github.com')
     runs-on: ubuntu-20.04
     steps:
@@ -30,3 +30,16 @@ jobs:
     - id: run_lint
       name: Run markdown linter
       uses: Shegox/automation-actions/markdownlint@main
+  markdown-link-check:
+    if: contains(github.repositoryUrl, 'github.com')
+    runs-on: ubuntu-20.04
+    steps:
+
+    - id: checkout_repo
+      name: Check out the repository content
+      uses: actions/checkout@v2
+
+    - id: run_lint
+      name: Run markdown linter
+      uses: Shegox/automation-actions/markdown-link-check@main
+      
