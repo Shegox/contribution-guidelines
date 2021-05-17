@@ -29,4 +29,4 @@ jobs:
 
     - id: run_lint
       name: Run markdown linter
-      uses: Shegox/markdownlint/markdownlint@main
+      uses: Shegox/automation-actions/markdownlint@main
